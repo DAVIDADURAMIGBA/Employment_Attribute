@@ -1,0 +1,10 @@
+--Count of employees per job role.
+
+--Average monthly income per role.
+
+--Average tenure at the company per role.
+
+SELECT [Job Role], COUNT(*) AS EmployeeCount, AVG([Monthly Income]) AS AvgIncome, AVG([Years at Company]) AS AvgTenure
+FROM Employment_Attribute
+GROUP BY [Job Role]
+ORDER BY EmployeeCount DESC;
