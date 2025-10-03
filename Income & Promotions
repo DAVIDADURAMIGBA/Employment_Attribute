@@ -1,0 +1,12 @@
+--Average monthly income by job level.
+
+--Number of promotions vs attrition.
+
+SELECT [Job Level], AVG([Monthly Income]) AS AvgIncome
+FROM Employment_Attribute
+GROUP BY [Job Level];
+
+SELECT [Number of Promotions], COUNT(*) AS EmployeeCount, SUM(CASE WHEN Attrition = 'Stayed' THEN 1 ELSE 0 END) AS LeftCompany
+FROM Employment_Attribute
+GROUP BY [Number of Promotions]
+ORDER BY [Number of Promotions];
