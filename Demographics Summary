@@ -1,0 +1,16 @@
+--Age distribution (min, max, average age).
+
+--Gender breakdown (% male vs female).
+
+--Education levels distribution.
+
+SELECT MIN(Age) AS MinAge, MAX(Age) AS MaxAge, AVG(Age) AS AvgAge FROM Employment_Attribute;
+
+SELECT Gender, COUNT(*) AS Count, CAST(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM Employment_Attribute) AS DECIMAL(5,2)) AS Percentage
+FROM Employment_Attribute
+GROUP BY Gender;
+
+SELECT [Education Level], COUNT(*) AS Count
+FROM Employment_Attribute
+GROUP BY [Education Level]
+ORDER BY Count DESC;
