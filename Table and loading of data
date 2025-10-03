@@ -1,0 +1,39 @@
+-- Table Creation and loading of data for the Employment Attribute data
+
+DROP TABLE  IF EXISTS Employment_Attribute;
+CREATE TABLE Employment_Attribute(
+[Employee ID] INT PRIMARY KEY,
+[Age] INT,
+[Gender] VARCHAR(50),
+[Years at Company] INT,
+[Job Role] VARCHAR(50),
+[Monthly Income] INT,
+[Work-Life Balance] VARCHAR(MAX),
+[Job Satisfaction] VARCHAR(50),
+[Performance Rating] VARCHAR(50),
+[Number of Promotions] INT,
+[Overtime] VARCHAR(50),
+[Distance from Home] INT,
+[Education Level] VARCHAR(50),
+[Marital Status] VARCHAR(50),
+[Number of Dependents] INT,
+[Job Level] VARCHAR(50),
+[Company Size] VARCHAR(50),
+[Company Tenure (In Months)] INT,
+[Remote Work] VARCHAR(50),
+[Leadership Opportunities] VARCHAR(50),
+[Innovation Opportunities] VARCHAR(50),
+[Company Reputation] VARCHAR(50),
+[Employee Recognition] VARCHAR(50),
+[Attrition] VARCHAR(50)
+);
+
+--Loading of data into the Employment_Attribute table
+
+BULK INSERT Employment_Attribute FROM
+'C:\Users\Dell\Downloads\Emp_attrition_csv.csv'
+WITH(
+FIRSTROW = 2,
+FIELDTERMINATOR = ',',
+TABLOCK
+);
