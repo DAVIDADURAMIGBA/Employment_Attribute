@@ -1,0 +1,13 @@
+--Attrition Overview
+
+--Total number of employees.
+
+--Total attrition count and attrition rate (% who left).
+
+--Attrition by department/job role.
+
+SELECT 
+    COUNT(*) AS TotalEmployees,
+    SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) AS EmployeesLeft,
+    CAST(SUM(CASE WHEN Attrition = 'Yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS AttritionRate
+FROM Employment_Attribute;
