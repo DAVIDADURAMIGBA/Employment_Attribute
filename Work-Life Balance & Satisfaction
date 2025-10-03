@@ -1,0 +1,17 @@
+--Distribution of work-life balance ratings.
+
+--Average job satisfaction score.
+
+--Compare satisfaction across roles.
+
+SELECT [Work-Life Balance], COUNT(*) AS Count
+FROM Employment_Attribute
+GROUP BY [Work-Life Balance];
+
+SELECT 
+[Job Satisfaction], 
+COUNT([Job Satisfaction]) Count
+FROM Employment_Attribute
+GROUP BY [Job Satisfaction]
+ORDER BY Count DESC
+
